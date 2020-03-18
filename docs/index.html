@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenLUTJs - Create Luts</title>
+    <script src="lutCreatorJs.js"></script>
+    <script src="js.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>OpenLUTjs</h1>
+        <hr>
+    </header>
+    <section>
+        <form>
+            <fieldset>
+                <legend>Select LUT size:</legend>
+                <input type="radio" name="lutSize" value="25" checked>25</input>
+                <input type="radio" name="lutSize" value="64">64</input>
+                <input type="radio" name="lutSize" value="144">144</input>
+            </fieldset>
+            <input type="button" id="hald" value="Generate HALD" onclick="generateHald()">
+            <input type="button" id="cube" value="Generate .CUBE" onclick="generateCube()">
+        </form>
+    </section>
+</body>
+
+</html>
