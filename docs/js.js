@@ -11,8 +11,8 @@ function getRadius(lutSize) {
     return lutSize;
 }
 
-function generateHald() {
-    let hald = new Hald(getRadius());
+function generateHald(number) {
+    let hald = new Hald(number);
     hald.createHald();
 }
 
