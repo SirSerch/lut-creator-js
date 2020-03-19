@@ -42,7 +42,7 @@ class Hald {
     }
     static exportCube(lutTitle) {
         if (!lutTitle)
-            lutTitle = "OpenLUTJs";
+            lutTitle = "lutCreatorJs";
         let hald = document.createElement('canvas');
         let haldData = hald.getContext('2d');
         function exportCube(text, lutTitle) {
