@@ -1,6 +1,6 @@
 class Hald {
     lutSize: number;
-    constructor(lutSize: number, lutTitle?: string) {
+    constructor(lutSize: number) {
         this.lutSize = lutSize
     }
 
