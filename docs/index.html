@@ -2,10 +2,21 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55238000-5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-55238000-5');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lutCreator.js - Create Luts</title>
-    <meta name="description" content="Generate a LUT from any photo or video editing application. LutCreatorJs it's an open source project">
+    <meta name="description"
+        content="Generate a LUT from any photo or video editing application. LutCreatorJs it's an open source project">
     <meta name="author" content="Sergio Santos | @SirSerch">
     <meta name="theme-color" content="#d1ecf1">
     <script src="lutCreatorJs.js"></script>
@@ -45,7 +56,7 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                         <a class="dropdown-item" href="#" onclick="generateHald(25)"><i class="fas fa-download"></i>
-                           HALD 25 SIZE</a>
+                            HALD 25 SIZE</a>
                         <a class="dropdown-item" href="#" onclick="generateHald(64)"><i class="fas fa-download"></i>
                             HALD 64 SIZE</a>
                         <a class="dropdown-item" href="#" onclick="generateHald(144)"><i class="fas fa-download"></i>
@@ -67,15 +78,18 @@
                     A HALD is a 3D LUT converted into 2D image as JPG or PNG file.
                     The HALD is a pattern containing all color values (pixels) for a specific size of grid.
                     Bigger is the grid, better color accuracy is the output generated LUT.</p>
-                    <hr class="d-lg-none">
+                <hr class="d-lg-none">
             </div>
             <div class="col-xl-4 col-lg-6 col-12">
                 <h5><i class="fas fa-question-circle"></i> How it works?</h5>
                 <p>
-                    Click on Download HALD button al select the size of the LUT to generate a PNG HALD, normally with a <strong>HALD 25 SIZE</strong> is
+                    Click on Download HALD button al select the size of the LUT to generate a PNG HALD, normally with a
+                    <strong>HALD 25 SIZE</strong> is
                     enough. SIZE 144 is for <strong>Extreme Exceptions</strong><br><br>
-                    Open this PNG into your favorite photo editing application, like Photoshop, Lightroom, Camera Raw... and apply a color correction on the
-                    PNG HALD. Then you save it as PNG without compression (or in <strong>JPG but with 100% quality</strong>).
+                    Open this PNG into your favorite photo editing application, like Photoshop, Lightroom, Camera Raw...
+                    and apply a color correction on the
+                    PNG HALD. Then you save it as PNG without compression (or in <strong>JPG but with 100%
+                        quality</strong>).
                     <br><br>
                     Finally, click <strong>Convert to CUBE</strong> and select the modified PNG you just saved.
                     <br><br>
@@ -92,12 +106,14 @@
                 <div class="row">
                     <div class="col-12">
                         <p><strong>Photoshop color grading to Premiere</strong></p>
-                        <video class="img-fluid" src="videos/PhotoshopToLUT.webm" controls poster="videos/PhotoshopToPremiere.jpg"></video>
+                        <video class="img-fluid" src="videos/PhotoshopToLUT.webm" controls
+                            poster="videos/PhotoshopToPremiere.jpg"></video>
                         <br>
                     </div>
                     <div class="col-12">
                         <p><strong>Lightroom color preset to Premiere</strong></p>
-                        <video class="img-fluid" src="videos/LightroomToLUT.webm" controls poster="videos/LightroomToPremiere.jpg"></video>
+                        <video class="img-fluid" src="videos/LightroomToLUT.webm" controls
+                            poster="videos/LightroomToPremiere.jpg"></video>
                     </div>
                 </div>
                 <hr class="d-lg-none">
@@ -105,12 +121,14 @@
         </div>
         <div class="row mt-4">
             <div class="col">
-                <p><a href="https://github.com/SirSerch/LutCreatorJs" target="_blank">Open the project in GitHub <i class="fab fa-github"></i></a></p>
+                <p><a href="https://github.com/SirSerch/LutCreatorJs" target="_blank">Open the project in GitHub <i
+                            class="fab fa-github"></i></a></p>
             </div>
             <hr>
         </div>
     </section>
-    <p style="text-align: center;"><i class="fas fa-terminal"></i> Code with <i class="fas fa-heart"></i> by <a href="https://github.com/SirSerch" target="_blank">SirSerch</a></p>
+    <p style="text-align: center;"><i class="fas fa-terminal"></i> Code with <i class="fas fa-heart"></i> by <a
+            href="https://github.com/SirSerch" target="_blank">SirSerch</a></p>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
