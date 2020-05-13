@@ -1,3 +1,3 @@
 # LutCreatorJs
 
-To use the online app, please visit [this web](https://sirserch.github.io/LutCreatorJs)
+To use the online app, please visit [this web](bit.ly/lut-creator-js)
