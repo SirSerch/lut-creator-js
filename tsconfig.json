@@ -1,15 +1,5 @@
 {
-    "compileOnSave": true,
     "compilerOptions": {
-        "target": "ES2018",
-        "jsx": "preserve",
-        "sourceMap": true
-    },
-    "exclude": [
-        "node_modules",
-        "**/node_modules/*"
-    ],
-    "files": [
-        "lutCreatorJs.ts"
-    ]
+        "esModuleInterop": true
+    }
 }

@@ -1,2 +1,5 @@
-#All test files
-*test*
+.idea
+.classpath
+node_modules/
+
+*.lock
