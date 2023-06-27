@@ -38,6 +38,17 @@ describe('Lut Creator', () => {
             expect(spyExportHald).toHaveBeenCalledWith(aCanvasWithCalculatedSize, lutSize);
         });
     });
+    describe('Export cube should generate a .cube file', () => {
+        it('should not generate any cube file if the selected file has no changes', () => {
+            const lutSize = 20;
+            const hald = new Hald(lutSize);
+            const spyLoadImage = jest.spyOn(hald as any,'loadImage')
+            const spyGenerateCube = jest.spyOn(hald as any,'generateCube')
+            expect(() => hald.exportCube()).not.toThrowError()
+            expect(spyLoadImage).toBeCalledTimes(0)
+            expect(spyGenerateCube).toBeCalledTimes(0)
+        });
+    });
 });
 
 // TODO move this logic to somewhere once the production code allows it
