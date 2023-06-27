@@ -12,10 +12,11 @@ function getRadius(lutSize) {
 }
 
 function generateHald(number) {
-    let hald = new Hald(number);
-    hald.createHald();
+    let hald = new Hald();
+    hald.createHald(number);
 }
 
 function generateCube() {
-    Hald.exportCube();
+    let hald = new Hald();
+    hald.exportCube();
 }
