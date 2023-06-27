@@ -4,7 +4,7 @@ export class Hald {
         this.lutSize = lutSize
     }
 
-    createHald(lutSize?: number) {
+    createHald(lutSize?: number): void {
         if (!lutSize) lutSize = this.lutSize;
 
         let haldSize = Math.round((this.lutSize ** 3) ** 0.5);
@@ -13,24 +13,6 @@ export class Hald {
 
         let haldData = hald.getContext("2d");
         let r: number, g: number, b: number = g = r = 0;
-
-        function exportHald(target: HTMLCanvasElement, lutSize: number) {
-            let download = document.createElement('a');
-            download.download = "Neutral_" + lutSize + ".png";
-            download.href = target.toDataURL("image/png");
-            download.name = "Export HALD";
-            download.click();
-        }
-
-        function setPixel(target: CanvasRenderingContext2D, values: number[], position: number[]) {
-
-            function value(color: number) {
-                return Math.round((255 / (lutSize - 1)) * color)
-            }
-
-            target.fillStyle = "rgb(" + value(values[0]) + "," + value(values[1]) + "," + value(values[2]) + ")";
-            target.fillRect(position[0], position[1], 1, 1);
-        }
 
         for (let y = 0; y < hald.height; y++) {
             for (let x = 0; x < hald.width; x++) {
@@ -42,14 +24,32 @@ export class Hald {
                     g = 0
                     b += 1
                 }
-                setPixel(haldData, [r, g, b], [x, y]);
+                this.setPixel(haldData, [r, g, b], [x, y], lutSize);
                 r += 1
             }
         }
-        exportHald(hald, lutSize);
+        this.exportHald(hald, lutSize);
     }
 
-    static exportCube(lutTitle?: string) {
+    private exportHald(target: HTMLCanvasElement, lutSize: number) {
+        let download = document.createElement('a');
+        download.download = "Neutral_" + lutSize + ".png";
+        download.href = target.toDataURL("image/png");
+        download.name = "Export HALD";
+        download.click();
+    }
+
+    private setPixel(target: CanvasRenderingContext2D, values: number[], position: number[], lutSize: number) {
+
+        function value(color: number) {
+            return Math.round((255 / (lutSize - 1)) * color)
+        }
+
+        target.fillStyle = "rgb(" + value(values[0]) + "," + value(values[1]) + "," + value(values[2]) + ")";
+        target.fillRect(position[0], position[1], 1, 1);
+    }
+
+    static exportCube(lutTitle?: string): void {
         if (!lutTitle) lutTitle = "lutCreatorJs";
         let hald = document.createElement('canvas');
         let haldData = hald.getContext('2d');
