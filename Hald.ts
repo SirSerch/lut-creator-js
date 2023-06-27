@@ -57,6 +57,15 @@ export class Hald {
         this.inputHald(lutTitle, hald, haldData);
     }
 
+    private inputHald(lutTitle: string, hald: HTMLCanvasElement, haldData: CanvasRenderingContext2D) {
+        let selectFile = document.createElement('input');
+        selectFile.type = 'file';
+        selectFile.click();
+        selectFile.onchange = (e) => {
+            this.loadImage(selectFile.files, lutTitle, hald, haldData);
+        }
+    }
+
     private createCube(text: string, lutTitle: string) {
         let exportFile = document.createElement('a');
         let file = new Blob([text], { type: 'text/plain' });
@@ -70,15 +79,6 @@ export class Hald {
         text += ("TITLE " + lutTitle + "_" + lutSize + "\n");
         text += ("LUT_3D_SIZE " + lutSize + "\n\n");
         return text;
-    }
-
-    private inputHald(lutTitle: string, hald: HTMLCanvasElement, haldData: CanvasRenderingContext2D) {
-        let selectFile = document.createElement('input');
-        selectFile.type = 'file';
-        selectFile.click();
-        selectFile.onchange = (e) => {
-            this.loadImage(selectFile.files, lutTitle, hald, haldData);
-        }
     }
 
     private loadImage(file: FileList, lutTitle: string, hald: HTMLCanvasElement, haldData: CanvasRenderingContext2D) {
