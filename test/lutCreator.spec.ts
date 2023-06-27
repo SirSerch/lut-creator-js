@@ -48,6 +48,24 @@ describe('Lut Creator', () => {
             expect(spyLoadImage).toBeCalledTimes(0)
             expect(spyGenerateCube).toBeCalledTimes(0)
         });
+        it('should generate cube file if we select a file', () => {
+            const lutSize = 20;
+            const hald = new Hald(lutSize);
+
+            const spyLoadImage = jest.spyOn(hald as any,'loadImage')
+            const spyGenerateCube = jest.spyOn(hald as any,'generateCube')
+
+            // TODO fix production code to be able to test
+            expect(() => {
+                const event = new Event('change')
+                document.dispatchEvent(event)
+
+                hald.exportCube()
+            }).not.toThrowError()
+
+            expect(spyLoadImage).toBeCalledTimes(1)
+            expect(spyGenerateCube).toBeCalledTimes(1)
+        });
     });
 });
 
