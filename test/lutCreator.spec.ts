@@ -13,8 +13,13 @@ describe('Lut Creator', () => {
             expect(spyExportHald).toHaveBeenCalledWith(canvasZero, lutSize);
         });
 
-        it('should create the png file if lut size is not zero', () => {
-            let lutSize = 20;
+        it.each([
+            [20],
+            [25],
+            [64],
+            [144], // very expensive
+        ])
+        ('should create the png file if LUT size is not zero (%d)', (lutSize: number) => {
             const aCanvasWithCalculatedSize = aCanvasWithSize(lutSize);
             const hald = new Hald(lutSize);
             const spyExportHald = jest.spyOn(hald as any,'exportHald')
