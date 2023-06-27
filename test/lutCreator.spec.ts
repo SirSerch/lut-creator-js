@@ -14,9 +14,14 @@ describe('Lut Creator', () => {
         });
 
         it('should create the png file if lut size is not zero', () => {
+            const aCanvasWithCalculatedSize = document.createElement('canvas');
+            aCanvasWithCalculatedSize.width = 89;
+            aCanvasWithCalculatedSize.height = 89;
             const hald = new Hald(20);
+            const spyExportHald = jest.spyOn(hald as any,'exportHald')
 
             expect(() => hald.createHald(20)).not.toThrowError();
+            expect(spyExportHald).toHaveBeenCalledWith(aCanvasWithCalculatedSize, 20);
         });
     });
 });
