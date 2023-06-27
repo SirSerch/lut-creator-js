@@ -1,13 +1,6 @@
 export class Hald {
-    lutSize: number;
-    constructor(lutSize: number) {
-        this.lutSize = lutSize
-    }
-
     createHald(lutSize?: number): void {
-        if (!lutSize) lutSize = this.lutSize;
-
-        let haldSize = Math.round((this.lutSize ** 3) ** 0.5);
+        let haldSize = Math.round((lutSize ** 3) ** 0.5);
         let hald = document.createElement("canvas");
         hald.width = hald.height = haldSize;
 
@@ -16,11 +9,11 @@ export class Hald {
 
         for (let y = 0; y < hald.height; y++) {
             for (let x = 0; x < hald.width; x++) {
-                if (r >= this.lutSize) {
+                if (r >= lutSize) {
                     r = 0
                     g += 1
                 }
-                if (g >= this.lutSize) {
+                if (g >= lutSize) {
                     g = 0
                     b += 1
                 }

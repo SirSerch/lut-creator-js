@@ -6,20 +6,20 @@ describe('Lut Creator', () => {
         it('should create a HAL png file with canvas size zero if LUT size is zero', () => {
             let lutSize = 0;
             const canvasZero = aCanvasWithSize(lutSize);
-            const hald = new Hald(lutSize);
+            const hald = new Hald();
             const spyExportHald = jest.spyOn(hald as any,'exportHald')
 
-            expect(() => hald.createHald(0)).not.toThrowError();
+            expect(() => hald.createHald(lutSize)).not.toThrowError();
             expect(spyExportHald).toHaveBeenCalledWith(canvasZero, lutSize);
         });
 
         it('should create a HAL png file with canvas size zero if LUT size negative', () => {
             let lutSize = -1;
             const canvasZero = aCanvasWithSize(lutSize);
-            const hald = new Hald(lutSize);
+            const hald = new Hald();
             const spyExportHald = jest.spyOn(hald as any,'exportHald')
 
-            expect(() => hald.createHald(0)).not.toThrowError();
+            expect(() => hald.createHald(lutSize)).not.toThrowError();
             expect(spyExportHald).toHaveBeenCalledWith(canvasZero, lutSize);
         });
 
@@ -31,7 +31,7 @@ describe('Lut Creator', () => {
         ])
         ('should create the png file if LUT size is not zero (%d)', (lutSize: number) => {
             const aCanvasWithCalculatedSize = aCanvasWithSize(lutSize);
-            const hald = new Hald(lutSize);
+            const hald = new Hald();
             const spyExportHald = jest.spyOn(hald as any,'exportHald')
 
             expect(() => hald.createHald(lutSize)).not.toThrowError();
@@ -41,7 +41,7 @@ describe('Lut Creator', () => {
     describe('Export cube should generate a .cube file', () => {
         it('should not generate any cube file if the selected file has no changes', () => {
             const lutSize = 20;
-            const hald = new Hald(lutSize);
+            const hald = new Hald();
             const spyLoadImage = jest.spyOn(hald as any,'loadImage')
             const spyGenerateCube = jest.spyOn(hald as any,'generateCube')
             expect(() => hald.exportCube()).not.toThrowError()
@@ -50,7 +50,7 @@ describe('Lut Creator', () => {
         });
         it('should generate cube file if we select a file', () => {
             const lutSize = 20;
-            const hald = new Hald(lutSize);
+            const hald = new Hald();
 
             const spyLoadImage = jest.spyOn(hald as any,'loadImage')
             const spyGenerateCube = jest.spyOn(hald as any,'generateCube')
